@@ -23,9 +23,9 @@ A high-performance, mobile-optimized short-video scrolling feed built with React
 Create a `.env` file in the root directory and configure the following variables to point to your VPS services:
 
 ```env
-VITE_API_BASE_URL=https://chheu-api.duckdns.org:8080
-VITE_REEL_THUMB_BASE_URL=https://chheu-api.duckdns.org:9000/reels-thumbnails
-VITE_REEL_STREAM_BASE_URL=https://chheu-api.duckdns.org:9000/reels-stream
+VITE_API_BASE_URL=http://localhost:8080
+VITE_REEL_THUMB_BASE_URL=http://localhost:9000/reels-thumbnails
+VITE_REEL_STREAM_BASE_URL=http://localhost:9000/reels-stream
 ```
 
 ## ?? Installation & Setup
