@@ -1,0 +1,144 @@
+.upload-page {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.upload-card {
+  width: min(680px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.75));
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.35);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.upload-title {
+  font-size: 1.35rem;
+  color: #fef3c7;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.upload-subtitle {
+  color: #d1d5db;
+  margin: 8px 0 16px;
+}
+
+.upload-form {
+  display: grid;
+  gap: 10px;
+}
+
+.upload-label {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.upload-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(2, 6, 23, 0.65);
+  color: #f8fafc;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.upload-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.upload-file {
+  padding: 8px;
+}
+
+.media-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.media-picker-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 170px;
+  height: 170px;
+  border-radius: 26px;
+  border: 1px solid rgba(148, 163, 184, 0.65);
+  background: rgba(2, 6, 23, 0.6);
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.media-picker-icon {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.media-picker-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.media-picker-btn:active {
+  transform: translateY(1px) scale(0.995);
+}
+
+.file-name {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.media-preview {
+  width: 360px;
+  max-width: 100%;
+  justify-self: center;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(2, 6, 23, 0.65);
+}
+
+.preview-image,
+.preview-video {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.submit-btn {
+  margin-top: 6px;
+  border: 1px solid rgba(251, 191, 36, 0.8);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: #fff7ed;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  background: linear-gradient(180deg, #dc2626 0%, #7f1d1d 100%);
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.06);
+}

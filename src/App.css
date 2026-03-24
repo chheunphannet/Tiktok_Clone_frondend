@@ -1,0 +1,84 @@
+.app {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #f8fafc;
+  font-family: "Trebuchet MS", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(185, 28, 28, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 6%, rgba(217, 119, 6, 0.18), transparent 30%),
+    linear-gradient(165deg, #131313 0%, #242010 45%, #111827 100%);
+  overflow: hidden;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -35deg,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 9px
+  );
+  pointer-events: none;
+}
+
+.bottom-nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(248, 250, 252, 0.2);
+  background: linear-gradient(0deg, rgba(17, 24, 39, 0.85) 0%, rgba(17, 24, 39, 0.65) 100%);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 -8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 250, 252, 0.25);
+  color: #e5e7eb;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  background: linear-gradient(180deg, rgba(75, 85, 99, 0.45), rgba(31, 41, 55, 0.55));
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.bottom-nav a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(251, 191, 36, 0.85);
+  background: linear-gradient(180deg, rgba(180, 83, 9, 0.72), rgba(153, 27, 27, 0.82));
+  color: #fff7ed;
+}
+
+.bottom-nav a.active {
+  border-color: rgba(251, 191, 36, 1);
+  background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%);
+  color: #fff7ed;
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.25), 0 8px 18px rgba(220, 38, 38, 0.35);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.content h1 {
+  margin: 22px 18px;
+  font-size: 2rem;
+  color: #fef3c7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
