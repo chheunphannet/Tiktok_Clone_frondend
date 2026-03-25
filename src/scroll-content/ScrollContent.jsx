@@ -41,6 +41,7 @@ const ScrollContent = () => {
   const nextCursorRef = useRef(nextCursor);
   const hasNextPageRef = useRef(hasNextPage);
   const [isLoading, setIsLoading] = useState(false);
+  const [feedError, setFeedError] = useState("");
   const [likePendingById, setLikePendingById] = useState({});
   const [expandedCaptions, setExpandedCaptions] = useState({});
   const [captionOverflowById, setCaptionOverflowById] = useState({});
@@ -179,6 +180,7 @@ const ScrollContent = () => {
     if (isFetchingRef.current || !hasNextPageRef.current) return;
     isFetchingRef.current = true;
     setIsLoading(true);
+    setFeedError("");
 
     try {
       const deviceId = getDeviceId();
@@ -189,6 +191,9 @@ const ScrollContent = () => {
       }
 
       const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
       const data = await response.json();
 
       const hasDataArray = Array.isArray(data?.data);
@@ -222,6 +227,7 @@ const ScrollContent = () => {
       setNextCursor(nextCur);
     } catch (error) {
       console.error("Failed to fetch reels:", error);
+      setFeedError("Failed to load feed from the backend. Please try again.");
     } finally {
       isFetchingRef.current = false;
       setIsLoading(false);
@@ -245,6 +251,16 @@ const ScrollContent = () => {
       fetchReels();
     }
   }, [activeIndex, reels.length, fetchReels]);
+
+  if (feedError && reels.length === 0) {
+    return (
+      <div className="feed" role="region" aria-label="Short video feed">
+        <p className="feed-status error" role="status">
+          {feedError}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="feed" role="region" aria-label="Short video feed">
@@ -340,6 +356,12 @@ const ScrollContent = () => {
           </article>
         );
       })}
+
+      {feedError && reels.length > 0 && (
+        <p className="feed-status error inline" role="status">
+          {feedError}
+        </p>
+      )}
 
       {isLoading && (
         <div style={{ color: "white", textAlign: "center", padding: "20px" }}>

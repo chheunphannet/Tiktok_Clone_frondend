@@ -28,6 +28,11 @@
   color: #fca5a5;
 }
 
+.feed-status.inline {
+  height: auto;
+  padding: 12px 16px 24px;
+}
+
 .video-card {
   position: relative;
   /* FIXED: Changed to exactly 100% to remove the peek/gap */
